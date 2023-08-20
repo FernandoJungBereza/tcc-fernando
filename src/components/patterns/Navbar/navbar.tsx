@@ -59,8 +59,8 @@ export default function MenuNavbar() {
     return (
         <nav className="text-black flex ">
             <div className={` bg-neutral-900 text-white text-xl border-r-2 border-blue-700 ${menuIsOpen == true ? 'w-[200px]' : 'w-[50px]'} text-black  transition-all duration-200 z-50`}>
-                <div className={`flex flex-col text-xl fixed ${menuIsOpen == true ? 'w-[200px]' : 'w-[50px]'}`}>
-                    <div className={` ${menuIsOpen == true ? 'h-[60px] border-b-4 px-2' : 'h-[0px]'} border-blue-700 transition-all duration-200 z-30 shadow-white/30 shadow-md`}>
+                <div className={`flex flex-col text-xl fixed ${menuIsOpen == true ? 'w-[200px]' : 'w-[50px]'} transition-all duration-200`}>
+                    <div className={` ${menuIsOpen == true ? 'h-[60px] border-b-4 px-2' : 'h-[0px]'} border-blue-700 transition-all duration-200 z-30 shadow-black/50 shadow-md`}>
                         <h1 className={`overflow-hidden whitespace-nowrap ${menuIsOpen == true ? '' : 'hidden'} h-full flex justify-center items-center`}>TCC-Fernando</h1>
                     </div>
                     {menu.map((item, index) => {
@@ -72,12 +72,17 @@ export default function MenuNavbar() {
                     })}
                 </div>
             </div>
-            <div className="h-[60px] bg-neutral-900 text-white border-b-4 border-blue-700 shadow-white/30 shadow-md w-full fixed ">
+            <div className="h-[60px] bg-neutral-900 text-white border-b-4 border-blue-700 shadow-black/50 shadow-md w-full fixed ">
                 <ContainerPatterns>
                     <div className={`${menuIsOpen == true ? 'ml-[210px]' : 'ml-[65px]'} text-white z-50 flex justify-start items-center transition-all duration-200 h-[60px] `}>
                         <ButtonNav onClick={() => setMenuIsOpen(!menuIsOpen)} />
                         <h1 className="ml-4">
-                            Home
+                            {
+                            pathRoute == '/ServerRender' ? 'Server-Side-Render' 
+                            : pathRoute == '/ClientRender' ? 'Client-Side-Render' 
+                            : pathRoute == '/Static' ?'Static-Render' 
+                            : 'Home'
+                            }
                         </h1>
                     </div>
                 </ContainerPatterns>

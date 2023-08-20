@@ -1,7 +1,7 @@
-export default function ClientRender(){
+export default function StaticRender() {
     return (
         <div className="text-black">
-            ClientRender
+            static
         </div>
     )
 }
