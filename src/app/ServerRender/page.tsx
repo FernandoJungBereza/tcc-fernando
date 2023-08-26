@@ -10,14 +10,10 @@ export default async function ServerRender() {
     })
     const data: Array<IData> = await res.json()
 
-    console.log(data)
-
     return (
         <div>
-            <Head>
                 <title>Server</title>
                 <meta name="description" content="Página para testar a renderização pelo servidor" />
-            </Head>
             <ContainerPage>
                 <div className="flex justify-center my-10">
                     <h1 className="text-4xl">Testando a Renderização pelo Servidor</h1>

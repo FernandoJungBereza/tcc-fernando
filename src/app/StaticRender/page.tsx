@@ -4,17 +4,13 @@ import { IData } from "@/interfaces"
 import Image from "next/image"
 
 export default async function StaticRender() {
-    const res = await fetch('http://localhost:4000/teste', {
-        next: {
-            revalidate: 10
-        }
-    })
+    const res = await fetch('http://localhost:4000/teste')
     const data: Array<IData> = await res.json()
 
     return (
         <div>
-            <title>Server</title>
-            <meta name="description" content="Página para testar a renderização pelo servidor" />
+            <title>Static</title>
+            <meta name="description" content="Página para testar a renderização stática" />
             <ContainerPage>
                 <div className="flex justify-center my-10">
                     <h1 className="text-4xl">Testando a Renderização Stática</h1>

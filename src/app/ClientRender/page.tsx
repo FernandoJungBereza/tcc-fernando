@@ -28,8 +28,8 @@ export default function ClientRender() {
 
     return (
         <div>
-            <title>Server</title>
-            <meta name="description" content="Página para testar a renderização pelo servidor" />
+            <title>Client</title>
+            <meta name="description" content="Página para testar a renderização pelo client" />
             <ContainerPage>
                 <div className="flex justify-center my-10">
                     <h1 className="text-4xl">Testando a Renderização pelo Client</h1>

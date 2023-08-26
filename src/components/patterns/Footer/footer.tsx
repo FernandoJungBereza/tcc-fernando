@@ -15,7 +15,7 @@ export default function Footer() {
                             </Link>
                         </h5>
                         <h5 className="flex justify-center items-center">
-                            Projeto de Conclusão de Curso
+                            Trabalho de Conclusão de Curso
                         </h5>
                         <h5 className="flex justify-center items-center">
                             © 2023 Fernando Jung Bereza
