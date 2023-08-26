@@ -76,7 +76,7 @@ export default function MenuNavbar() {
                 <ContainerPatterns>
                     <div className={`${menuIsOpen == true ? 'ml-[210px]' : 'ml-[65px]'} text-white z-50 flex justify-start items-center transition-all duration-200 h-[60px] `}>
                         <ButtonNav onClick={() => setMenuIsOpen(!menuIsOpen)} />
-                        <h1 className="ml-4">
+                        <h1 className="ml-4 whitespace-nowrap">
                             {
                             pathRoute == '/ServerRender' ? 'Server-Side-Render' 
                             : pathRoute == '/ClientRender' ? 'Client-Side-Render' 

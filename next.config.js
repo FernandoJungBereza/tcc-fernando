@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    reactStrictMode: true,
+};
 
-module.exports = nextConfig
+module.exports = {
+    ...nextConfig,
+    images: {
+        domains: ["downloadcursos.top", 'static.vecteezy.com', 'bluecresttraining.com'],
+    },
+};

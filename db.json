@@ -1,6 +1,37 @@
 {
-    "posts": [
-      { "id": 1, "title": "Post 1" },
-      { "id": 2, "title": "Post 2" }
-    ]
-  }
+  "teste": [
+    {
+      "id": 1,
+      "title": "Porque Utilizar Server Side Render?",
+      "nome": "Servidor",
+      "caracteristica": "Server Side Rendering (SSR) é uma técnica onde a renderização da interface do usuário ocorre no servidor antes de a página ser enviada ao navegador. Isso melhora o SEO, a velocidade inicial de carregamento, a experiência do usuário e a acessibilidade, além de funcionar em navegadores sem JavaScript. No entanto, também pode adicionar carga ao servidor e complexidade à configuração. A escolha entre SSR e Client Side Rendering (CSR) depende das necessidades do projeto e do público-alvo. Muitas vezes, uma abordagem híbrida é usada para combinar os benefícios de ambos os métodos.",
+      "resposta": "Server Side Rendering (SSR) é uma técnica onde a renderização da interface do usuário ocorre no servidor antes de a página ser enviada ao navegador. Isso melhora o SEO, a velocidade inicial de carregamento, a experiência do usuário e a acessibilidade, além de funcionar em navegadores sem JavaScript. No entanto, também pode adicionar carga ao servidor e complexidade à configuração. A escolha entre SSR e Client Side Rendering (CSR) depende das necessidades do projeto e do público-alvo. Muitas vezes, uma abordagem híbrida é usada para combinar os benefícios de ambos os métodos.",
+      "midia": {
+        "id": 1,
+        "nome": "https://bluecresttraining.com/wp-content/uploads/2018/05/banner-1920x800-5.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Porque Utilizar Client Side Render?",
+      "nome": "Client",
+      "caracteristica": "O Client Side Rendering (CSR) é usado quando se deseja criar interações dinâmicas e atualizações de página suaves sem recarregar toda a página. Ele é adequado para aplicativos que requerem personalização de conteúdo e separação clara entre front-end e back-end. No entanto, pode afetar o SEO e requer carregamento inicial de recursos JavaScript. A escolha de usar CSR depende das necessidades do projeto, da interatividade desejada e das prioridades de desempenho.",
+      "resposta": "O Client Side Rendering (CSR) é usado quando se deseja criar interações dinâmicas e atualizações de página suaves sem recarregar toda a página. Ele é adequado para aplicativos que requerem personalização de conteúdo e separação clara entre front-end e back-end. No entanto, pode afetar o SEO e requer carregamento inicial de recursos JavaScript. A escolha de usar CSR depende das necessidades do projeto, da interatividade desejada e das prioridades de desempenho.",
+      "midia": {
+        "id": 2,
+        "nome": "https://bluecresttraining.com/wp-content/uploads/2018/05/banner-1920x800-5.jpg"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Porque Utilizar Static Render?",
+      "nome": "Static",
+      "caracteristica": "O uso do Static Site Rendering (SSR) envolve a renderização de páginas no servidor e a geração de páginas estáticas que são rápidas, seguras e confiáveis. Isso melhora o desempenho, a escalabilidade, a segurança e a indexação nos mecanismos de busca. É adequado para sites com tráfego global, e seu uso pode reduzir custos de hospedagem. No entanto, nem todos os sites são apropriados para essa abordagem, especialmente aqueles com interações em tempo real. A decisão de usar o SSR deve considerar as necessidades do projeto e os requisitos específicos.",
+      "resposta": "O uso do Static Site Rendering (SSR) envolve a renderização de páginas no servidor e a geração de páginas estáticas que são rápidas, seguras e confiáveis. Isso melhora o desempenho, a escalabilidade, a segurança e a indexação nos mecanismos de busca. É adequado para sites com tráfego global, e seu uso pode reduzir custos de hospedagem. No entanto, nem todos os sites são apropriados para essa abordagem, especialmente aqueles com interações em tempo real. A decisão de usar o SSR deve considerar as necessidades do projeto e os requisitos específicos.",
+      "midia": {
+        "id": 3,
+        "nome": "https://bluecresttraining.com/wp-content/uploads/2018/05/banner-1920x800-5.jpg"
+      }
+    }
+  ]
+}
