@@ -25,7 +25,7 @@
     {
       "id": 3,
       "title": "Porque Utilizar Static Render?",
-      "nome": "Static",
+      "nome": "Statics",
       "caracteristica": "O uso do Static Site Rendering (SSR) envolve a renderização de páginas no servidor e a geração de páginas estáticas que são rápidas, seguras e confiáveis. Isso melhora o desempenho, a escalabilidade, a segurança e a indexação nos mecanismos de busca. É adequado para sites com tráfego global, e seu uso pode reduzir custos de hospedagem. No entanto, nem todos os sites são apropriados para essa abordagem, especialmente aqueles com interações em tempo real. A decisão de usar o SSR deve considerar as necessidades do projeto e os requisitos específicos.",
       "resposta": "O uso do Static Site Rendering (SSR) envolve a renderização de páginas no servidor e a geração de páginas estáticas que são rápidas, seguras e confiáveis. Isso melhora o desempenho, a escalabilidade, a segurança e a indexação nos mecanismos de busca. É adequado para sites com tráfego global, e seu uso pode reduzir custos de hospedagem. No entanto, nem todos os sites são apropriados para essa abordagem, especialmente aqueles com interações em tempo real. A decisão de usar o SSR deve considerar as necessidades do projeto e os requisitos específicos.",
       "midia": {

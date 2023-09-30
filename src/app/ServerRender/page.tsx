@@ -3,17 +3,20 @@ import { ArrayRender } from "@/components/pages/arrayRender"
 import { IData } from "@/interfaces"
 import Head from "next/head"
 import Image from "next/image"
+import Link from "next/link"
 
 export default async function ServerRender() {
     const res = await fetch('http://localhost:4000/teste', {
-        cache: 'no-store',
+        next: {
+
+        }
     })
     const data: Array<IData> = await res.json()
 
     return (
         <div>
-                <title>Server</title>
-                <meta name="description" content="Página para testar a renderização pelo servidor" />
+            <title>Server Side Render</title>
+            <meta name="description" content="Página para testar a renderização pelo servidor" />
             <ContainerPage>
                 <div className="flex justify-center my-10">
                     <h1 className="text-4xl">Testando a Renderização pelo Servidor</h1>

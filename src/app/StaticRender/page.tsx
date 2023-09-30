@@ -1,22 +1,25 @@
 import { ContainerPage } from "@/components/containers/containers"
 import { ArrayRender } from "@/components/pages/arrayRender"
 import { IData } from "@/interfaces"
+import Head from "next/head"
 import Image from "next/image"
 
 export default async function StaticRender() {
-    const res = await fetch('http://localhost:4000/teste')
-    const data: Array<IData> = await res.json()
+    // const res = await fetch('http://localhost:4000/teste')
+    // const data: Array<IData> = await res.json()
 
     return (
         <div>
-            <title>Static</title>
-            <meta name="description" content="Página para testar a renderização stática" />
+            <Head>
+                <title>Static</title>
+                <meta name="description" content="Página para testar a renderização estática" />
+            </Head>
             <ContainerPage>
                 <div className="flex justify-center my-10">
                     <h1 className="text-4xl">Testando a Renderização Stática</h1>
                 </div>
                 <div className="space-y-4">
-                    {data?.map((item, index) => {
+                    {/* {data?.map((item, index) => {
                         return (
                             <div key={item.id + index}>
                                 <ArrayRender
@@ -25,15 +28,15 @@ export default async function StaticRender() {
                                 />
                             </div>
                         )
-                    })}
+                    })} */}
                 </div>
                 <div className="w-full max-h-[200px] overflow-auto overflow-y-hidden my-8">
-                    {data != undefined &&
+                    {/* {data != undefined &&
                         <Image src={data[0].midia.nome ?? ''} width={1920} height={600} alt={"ImageServer"} priority={true} />
-                    }
+                    } */}
                 </div>
                 <div className="flex-col justify-center mb-8">
-                    {data?.map((item, index) => {
+                    {/* {data?.map((item, index) => {
                         return (
                             <div key={index + item.id} >
                                 <div className="text-center py-8">
@@ -44,7 +47,7 @@ export default async function StaticRender() {
                                 </div>
                             </div>
                         )
-                    })}
+                    })} */}
                 </div>
             </ContainerPage>
         </div>
