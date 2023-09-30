@@ -6,12 +6,12 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default async function ServerRender() {
-    const res = await fetch('http://localhost:4000/teste', {
-        next: {
+    // const res = await fetch('http://localhost:4000/teste', {
+    //     next: {
 
-        }
-    })
-    const data: Array<IData> = await res.json()
+    //     }
+    // })
+    // const data: Array<IData> = await res.json()
 
     return (
         <div>
@@ -22,7 +22,7 @@ export default async function ServerRender() {
                     <h1 className="text-4xl">Testando a Renderização pelo Servidor</h1>
                 </div>
                 <div className="space-y-4">
-                    {data.map((item, index) => {
+                    {/* {data.map((item, index) => {
                         return (
                             <div key={item.id + index}>
                                 <ArrayRender
@@ -31,9 +31,9 @@ export default async function ServerRender() {
                                 />
                             </div>
                         )
-                    })}
+                    })} */}
                 </div>
-                <div className="w-full max-h-[200px] overflow-auto overflow-y-hidden my-8">
+                {/* <div className="w-full max-h-[200px] overflow-auto overflow-y-hidden my-8">
                     <Image src={data[0].midia.nome} width={1920} height={600} alt={"ImageServer"} priority={true} />
                 </div>
                 <div className="flex-col justify-center mb-8">
@@ -49,7 +49,7 @@ export default async function ServerRender() {
                             </div>
                         )
                     })}
-                </div>
+                </div> */}
             </ContainerPage>
         </div>
     )
