@@ -12,7 +12,7 @@ export default function ClientRender() {
     const [data, setData] = useState<IDataRender | null>()
 
     function JsonServerGet() {
-        fetch('http://localhost:4000/ClientRender')
+        fetch('https://api.fernandobereza.tech/ClientRender')
             .then(res => {
                 res.json()
                     .then(result => {
