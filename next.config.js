@@ -10,6 +10,6 @@ const nextConfig = {
 module.exports = {
     ...nextConfig,
     images: {
-        domains: ["downloadcursos.top", 'static.vecteezy.com', 'bluecresttraining.com', 'www.shutterstock.com', 'i.pinimg.com'],
+        domains: ["downloadcursos.top", 'static.vecteezy.com', 'bluecresttraining.com', 'www.shutterstock.com', 'i.pinimg.com', "png.pngtree.com"],
     },
 };

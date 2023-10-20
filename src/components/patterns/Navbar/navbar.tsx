@@ -22,12 +22,6 @@ export default function MenuNavbar() {
 
     const menu: IMenuProps[] = [
         {
-            id: 1,
-            path: "/",
-            text: "Hibrid-Render",
-            icon: <AiFillHome title="home" size={35} color="white" />,
-        },
-        {
             id: 2,
             path: "/ServerRender",
             text: "Server-Render",
@@ -50,8 +44,10 @@ export default function MenuNavbar() {
 
     ];
 
+    const routerSplit = pathRoute.split(`/`)
+
     function VerificationPath(path: string, route: string) {
-        if (path === route) {
+        if (path === `/${routerSplit[1]}`) {
             return 'bg-blue-950 border-r-2 border-blue-700 duration-200'
         }
     }
@@ -72,16 +68,16 @@ export default function MenuNavbar() {
                     })}
                 </div>
             </div>
-            <div className="h-[60px] bg-neutral-900 text-white border-b-4 border-blue-700 shadow-black/50 shadow-md w-full fixed ">
+            <div className="h-[60px] bg-neutral-900 text-white border-b-4 border-blue-700 shadow-black/50 shadow-md w-full fixed z-30">
                 <ContainerPatterns>
                     <div className={`${menuIsOpen == true ? 'ml-[210px]' : 'ml-[65px]'} text-white z-50 flex justify-start items-center transition-all duration-200 h-[60px] `}>
                         <ButtonNav onClick={() => setMenuIsOpen(!menuIsOpen)} />
                         <h1 className="ml-4 whitespace-nowrap">
                             {
-                            pathRoute == '/ServerRender' ? 'Server-Side-Render' 
-                            : pathRoute == '/ClientRender' ? 'Client-Side-Render' 
-                            : pathRoute == '/StaticRender' ? 'Static-Render' 
-                            : 'Hibrid-Render'
+                                pathRoute == '/ServerRender' ? 'Server-Side-Render'
+                                    : pathRoute == '/ClientRender' ? 'Client-Side-Render'
+                                        : pathRoute == '/StaticRender' ? 'Static-Render'
+                                            : `${routerSplit[1]}`
                             }
                         </h1>
                     </div>

@@ -1,11 +1,19 @@
-import { Children, HTMLAttributes } from "react"
+'use client'
+
+import { link } from "fs"
+import { redirect, useRouter } from "next/navigation"
+import { HTMLAttributes } from "react"
 import { ImMenu } from "react-icons/im"
-import { text } from "stream/consumers"
 
 export interface IButtonNav extends HTMLAttributes<HTMLButtonElement> {
     text?: string
     icon?: React.ReactNode
     open?: boolean
+}
+
+export interface IButtonRedirect extends HTMLAttributes<HTMLButtonElement> {
+    link: string
+    children: React.ReactNode
 }
 
 export function ButtonNav({ ...props }: IButtonNav) {
@@ -29,5 +37,15 @@ export function ButtonMenuNav({ icon, text, open, ...props }: IButtonNav) {
                 </div>
             </button>
         </div>
+    )
+}
+
+export function ButtonRedirect({ children, link, ...props }: IButtonRedirect) {
+    const router = useRouter()
+
+    return (
+        <button type="button" onClick={() => router.push(link)} {...props}>
+            {children}
+        </button>
     )
 }
