@@ -7,7 +7,7 @@ export default async function ServerRenderById(request: any) {
     const id = request.params.id
 
     try {
-        const res = await fetch(`http://localhost:4000/StaticRender/${id}`, {
+        const res = await fetch(`https://api.fernandobereza.tech/StaticRender/${id}`, {
             next: {
                 revalidate: 10
             }

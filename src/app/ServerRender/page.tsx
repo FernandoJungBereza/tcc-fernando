@@ -8,7 +8,7 @@ export default async function ServerRender() {
     let data: Array<IDataRender> | null
 
     try {
-        const res = await fetch('http://localhost:4000/ServerRender', {
+        const res = await fetch('https://api.fernandobereza.tech/ServerRender', {
             cache: "no-cache"
         })
         data = await res.json()

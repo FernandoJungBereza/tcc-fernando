@@ -8,7 +8,7 @@ export default async function StaticRender() {
     let data: Array<IDataRender> | null
 
     try {
-        const res = await fetch('http://localhost:4000/StaticRender', {
+        const res = await fetch('https://api.fernandobereza.tech/StaticRender', {
             next: {
                 revalidate: 10
             }
@@ -17,8 +17,6 @@ export default async function StaticRender() {
     } catch {
         data = null
     }
-
-    console.log(data)
 
     return (
         <div>

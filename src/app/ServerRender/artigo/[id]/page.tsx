@@ -7,15 +7,13 @@ export default async function ServerRenderById(request: any) {
     const id = request.params.id
 
     try {
-        const res = await fetch(`http://localhost:4000/ServerRender/${id}`, {
+        const res = await fetch(`https://api.fernandobereza.tech/ServerRender/${id}`, {
             cache: "no-cache"
         })
         data = await res.json()
     } catch {
         data = null
     }
-
-    console.log(data)
 
     return (
         <div>

@@ -12,7 +12,7 @@ export default function ServerRenderById(request: any) {
 
     function JsonServerGet() {
 
-        fetch(`http://localhost:4000/ClientRender/${id}`)
+        fetch(`https://api.fernandobereza.tech/ClientRender/${id}`)
             .then(res => {
                 res.json()
                     .then(result => {
