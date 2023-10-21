@@ -15,11 +15,14 @@ export default async function ServerRenderById(request: any) {
         data = null
     }
 
+    const urlCanonical = `https://www.fernandobereza.tech/ServerRender/artigo/${id}`
+
     return (
         <div>
-            <title>Server Side Render</title>
-            <meta name="description" content="Página para testar a renderização pelo servidor" />
-            {data?.tags?.map((item, index) => <meta name="tags" key={index} content={item} />)}
+            <title>{data?.titulo}</title>
+            <meta name="description" content={data?.descricao} />
+            <meta name="keywords" content={data?.tags.join(`,`)} />
+            <link rel="canonical" href={urlCanonical} />
             <Image
                 src={`${data?.imagem_destaque}`}
                 width={1920}
@@ -83,7 +86,7 @@ export default async function ServerRenderById(request: any) {
                                     return (
                                         <div key={index}>
                                             <div className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4">
-                                                <ul>
+                                                <div>
                                                     <h4 className="text-xl justify-center flex">{item.titulo}</h4>
                                                     <div className="flex-col">
                                                         <label className="text-center flex justify-center">Resumo</label>
@@ -93,7 +96,7 @@ export default async function ServerRenderById(request: any) {
                                                         <span>Autor: {item.autor}</span>
                                                         <span>Data: {item.data_publicacao}</span>
                                                     </div>
-                                                </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     )

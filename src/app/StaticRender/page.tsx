@@ -3,6 +3,7 @@ import Head from "next/head"
 import Image from "next/image"
 import { IDataRender } from "@/interfaces"
 import { ButtonRedirect } from "@/components/buttons/buttons"
+import { useRouter } from "next/navigation"
 
 export default async function StaticRender() {
     let data: Array<IDataRender> | null
@@ -18,10 +19,13 @@ export default async function StaticRender() {
         data = null
     }
 
+    const urlCanonical = `https://www.fernandobereza.tech/StaticRender`
+
     return (
         <div>
-            <title>Static Render</title>
-            <meta name="description" content="Página para testar a renderização estática" />
+            <title>Artigos - Culinária</title>
+            <meta name="description" content="Artigos, Culinária, Explorar a diversidade culinária do mundo é uma aventura inigualável"/>
+            <link rel="canonical" href={urlCanonical} />
             <ContainerPage>
                 <div className="flex-col justify-center w-11/12 m-auto">
                     <div className="w-full">
@@ -36,7 +40,7 @@ export default async function StaticRender() {
                                             className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4 cursor-pointer hover:scale-105 transition-all duration-200 -z-10"
                                             link={`StaticRender/artigo/${item.id}`}
                                         >
-                                            <ul>
+                                            <div>
                                                 <h4 className="text-xl justify-center flex">{item.titulo}</h4>
                                                 <div>
                                                     <label className="text-center flex justify-center mt-4">Resumo</label>
@@ -46,7 +50,7 @@ export default async function StaticRender() {
                                                     <span>Autor: {item.autor.nome}</span>
                                                     <span>Data: {item.data_publicacao}</span>
                                                 </div>
-                                            </ul>
+                                            </div>
                                         </ButtonRedirect>
                                     </div>
                                 )

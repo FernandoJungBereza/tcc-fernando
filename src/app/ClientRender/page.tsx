@@ -26,10 +26,13 @@ export default function ClientRender() {
         JsonServerGet()
     }, [])
 
+    const urlCanonical = `https://www.fernandobereza.tech/ClientRender`
+
     return (
         <div>
-            <title>Client Side Render</title>
-            <meta name="description" content="Página para testar a renderização pelo cliente" />
+            <title>Artigos - Exploração espacial</title>
+            <meta name="description" content="Artigos, exploração do universo, A busca por vida extraterrestre é um dos empreendimentos mais emocionantes da astronomia."/>
+            <link rel="canonical" href={urlCanonical} />
             <ContainerPage>
                 <div className="flex-col justify-center w-11/12 m-auto">
                     <div className="w-full">
@@ -44,7 +47,7 @@ export default function ClientRender() {
                                             className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4 cursor-pointer hover:scale-105 transition-all duration-200 -z-10"
                                             link={`ClientRender/artigo/${item.id}`}
                                         >
-                                            <ul>
+                                            <div>
                                                 <h4 className="text-xl justify-center flex">{item.titulo}</h4>
                                                 <div>
                                                     <label className="text-center flex justify-center mt-4">Resumo</label>
@@ -54,7 +57,7 @@ export default function ClientRender() {
                                                     <span>Autor: {item.autor.nome}</span>
                                                     <span>Data: {item.data_publicacao}</span>
                                                 </div>
-                                            </ul>
+                                            </div>
                                         </ButtonRedirect>
                                     </div>
                                 )
