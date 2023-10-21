@@ -8,6 +8,7 @@ export interface IDataRender {
     id: number
     titulo: string
     subtitulo: string
+    descricao:string
     autor: {
         nome: string,
         email: string,

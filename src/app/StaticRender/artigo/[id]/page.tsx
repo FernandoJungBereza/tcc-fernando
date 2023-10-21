@@ -1,6 +1,7 @@
 import { ContainerPage } from "@/components/containers/containers"
 import { IDataRender } from "@/interfaces"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 export default async function ServerRenderById(request: any) {
     let data: IDataRender | null
@@ -17,11 +18,14 @@ export default async function ServerRenderById(request: any) {
         data = null
     }
 
+    const urlCanonical = `https://www.fernandobereza.tech/StaticRender/artigo/${id}`
+
     return (
         <div>
-            <title>Static Render</title>
-            <meta name="description" content="Página para testar a renderização estática" />
-            {data?.tags?.map((item, index) => <meta name="tags" key={index} content={item} />)}
+            <title>{data?.titulo}</title>
+            <meta name="description" content={data?.descricao} />
+            <meta name="keywords" content={data?.tags.join(`,`)} />
+            <link rel="canonical" href={urlCanonical} />
             <Image
                 src={`https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-crayfish-food-food-condiment-black-horizontal-banner-goodsseasoningblackhorizontal-bannerdelicious-image_50376.jpg`}
                 width={1920}
@@ -38,7 +42,7 @@ export default async function ServerRenderById(request: any) {
                     </div>
                     <div className="py-8">
                         <p>
-                            Conteudo: {data?.conteudo}
+                            {data?.conteudo}
                         </p>
                     </div>
                     <div className="flex w-full justify-between  py-8">
@@ -85,7 +89,7 @@ export default async function ServerRenderById(request: any) {
                                     return (
                                         <div key={index}>
                                             <div className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4">
-                                                <ul>
+                                                <div>
                                                     <h4 className="text-xl justify-center flex">{item.titulo}</h4>
                                                     <div className="flex-col">
                                                         <label className="text-center flex justify-center">Resumo</label>
@@ -95,7 +99,7 @@ export default async function ServerRenderById(request: any) {
                                                         <span>Autor: {item.autor}</span>
                                                         <span>Data: {item.data_publicacao}</span>
                                                     </div>
-                                                </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     )

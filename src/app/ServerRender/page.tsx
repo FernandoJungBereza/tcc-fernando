@@ -2,7 +2,8 @@ import { ButtonRedirect } from "@/components/buttons/buttons"
 import { ContainerPage } from "@/components/containers/containers"
 import { IDataRender } from "@/interfaces"
 import Image from "next/image"
-import { redirect, useRouter } from "next/navigation"
+import { redirect, usePathname, useRouter, useSearchParams } from "next/navigation"
+import { NextRequest } from "next/server"
 
 export default async function ServerRender() {
     let data: Array<IDataRender> | null
@@ -15,10 +16,14 @@ export default async function ServerRender() {
     } catch {
         data = null
     }
+
+    const urlCanonical = "https://www.fernandobereza.tech/ServerRender"
+
     return (
         <div>
-            <title>Server Side Render</title>
-            <meta name="description" content="Página para testar a renderização pelo servidor" />
+            <title>Artigos - Viagens</title>
+            <meta name="description" content="Artigos, Viagens pelo mundo, Viajar pelo mundo é uma das experiências mais enriquecedoras..."/>
+            <link rel="canonical" href={urlCanonical} />
             <ContainerPage>
                 <div className="flex-col justify-center w-11/12 m-auto">
                     <div className="w-full">
@@ -33,7 +38,7 @@ export default async function ServerRender() {
                                             className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4 cursor-pointer hover:scale-105 transition-all duration-200 -z-10"
                                             link={`ServerRender/artigo/${item.id}`}
                                         >
-                                            <ul>
+                                            <div>
                                                 <h4 className="text-xl justify-center flex">{item.titulo}</h4>
                                                 <div>
                                                     <label className="text-center flex justify-center mt-4">Resumo</label>
@@ -43,13 +48,13 @@ export default async function ServerRender() {
                                                     <span>Autor: {item.autor.nome}</span>
                                                     <span>Data: {item.data_publicacao}</span>
                                                 </div>
-                                            </ul>
+                                            </div>
                                         </ButtonRedirect>
                                     </div>
                                 )
                             })}
                         </div>
-                        
+
                     </div>
                 </div>
             </ContainerPage>
