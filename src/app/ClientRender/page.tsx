@@ -3,6 +3,7 @@
 import { ButtonRedirect } from "@/components/buttons/buttons"
 import { ContainerPage } from "@/components/containers/containers"
 import { IDataRender } from "@/interfaces"
+import Link from "next/link"
 import { useParams } from "next/navigation"
 import { useState, useEffect, useContext } from "react"
 
@@ -31,7 +32,7 @@ export default function ClientRender() {
     return (
         <div>
             <title>Artigos - Exploração espacial</title>
-            <meta name="description" content="Artigos, exploração do universo, A busca por vida extraterrestre é um dos empreendimentos mais emocionantes da astronomia."/>
+            <meta name="description" content="Artigos, exploração do universo, A busca por vida extraterrestre é um dos empreendimentos mais emocionantes da astronomia." />
             <link rel="canonical" href={urlCanonical} />
             <ContainerPage>
                 <div className="flex-col justify-center w-11/12 m-auto">
@@ -43,11 +44,8 @@ export default function ClientRender() {
                             {data?.map((item, index) => {
                                 return (
                                     <div key={item.id}>
-                                        <ButtonRedirect
-                                            className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4 cursor-pointer hover:scale-105 transition-all duration-200 -z-10"
-                                            link={`ClientRender/artigo/${item.id}`}
-                                        >
-                                            <div>
+                                        <Link href={`ClientRender/artigo/${item.id}`}>
+                                            <div className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4 cursor-pointer hover:scale-105 transition-all duration-200 -z-10">
                                                 <h4 className="text-xl justify-center flex">{item.titulo}</h4>
                                                 <div>
                                                     <label className="text-center flex justify-center mt-4">Resumo</label>
@@ -58,7 +56,7 @@ export default function ClientRender() {
                                                     <span>Data: {item.data_publicacao}</span>
                                                 </div>
                                             </div>
-                                        </ButtonRedirect>
+                                        </Link>
                                     </div>
                                 )
                             })}

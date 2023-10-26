@@ -2,6 +2,7 @@ import { ButtonRedirect } from "@/components/buttons/buttons"
 import { ContainerPage } from "@/components/containers/containers"
 import { IDataRender } from "@/interfaces"
 import Image from "next/image"
+import Link from "next/link"
 import { redirect, usePathname, useRouter, useSearchParams } from "next/navigation"
 import { NextRequest } from "next/server"
 
@@ -22,7 +23,7 @@ export default async function ServerRender() {
     return (
         <div>
             <title>Artigos - Viagens</title>
-            <meta name="description" content="Artigos, Viagens pelo mundo, Viajar pelo mundo é uma das experiências mais enriquecedoras..."/>
+            <meta name="description" content="Artigos, Viagens pelo mundo, Viajar pelo mundo é uma das experiências mais enriquecedoras..." />
             <link rel="canonical" href={urlCanonical} />
             <ContainerPage>
                 <div className="flex-col justify-center w-11/12 m-auto">
@@ -34,11 +35,8 @@ export default async function ServerRender() {
                             {data?.map((item, index) => {
                                 return (
                                     <div key={item.id}>
-                                        <ButtonRedirect
-                                            className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4 cursor-pointer hover:scale-105 transition-all duration-200 -z-10"
-                                            link={`ServerRender/artigo/${item.id}`}
-                                        >
-                                            <div>
+                                        <Link href={`ServerRender/artigo/${item.id}`}>
+                                            <div className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4 cursor-pointer hover:scale-105 transition-all duration-200 -z-10">
                                                 <h4 className="text-xl justify-center flex">{item.titulo}</h4>
                                                 <div>
                                                     <label className="text-center flex justify-center mt-4">Resumo</label>
@@ -49,7 +47,7 @@ export default async function ServerRender() {
                                                     <span>Data: {item.data_publicacao}</span>
                                                 </div>
                                             </div>
-                                        </ButtonRedirect>
+                                        </Link>
                                     </div>
                                 )
                             })}
