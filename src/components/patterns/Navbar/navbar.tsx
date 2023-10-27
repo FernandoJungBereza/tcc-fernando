@@ -6,6 +6,7 @@ import { AiFillHome, AiOutlineUserSwitch } from "react-icons/ai"
 import { IoIosThunderstorm } from "react-icons/io"
 import { BsServer } from "react-icons/bs"
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 export interface IMenuProps {
     path: string,
@@ -62,7 +63,9 @@ export default function MenuNavbar() {
                     {menu.map((item, index) => {
                         return (
                             <div key={index + item.id} className={`p-2 ${VerificationPath(item.path, pathRoute)}`}>
-                                <ButtonMenuNav icon={item.icon} text={item.text} open={menuIsOpen} onClick={() => router.push(`${item.path}`)} />
+                                <Link href={`${item.path}`}>
+                                    <ButtonMenuNav icon={item.icon} text={item.text} open={menuIsOpen} />
+                                </Link>
                             </div>
                         )
                     })}
