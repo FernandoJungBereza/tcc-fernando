@@ -13,7 +13,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
       <body className={inter.className}>
         <div className='z-40 flex'>
           <MenuNavbar />
-          <div className='w-full min-h-screen bg-black pt-[60px] text-white'>
+          <div className='w-full bg-black pt-[60px] text-white'>
             {children}
           </div>
         </div>
