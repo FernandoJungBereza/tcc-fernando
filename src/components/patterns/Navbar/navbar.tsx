@@ -26,7 +26,7 @@ export default function MenuNavbar() {
             id: 2,
             path: "/ServerRender",
             text: "Server-Render",
-            icon: <BsServer title="Banners" size={35} color="white" />,
+            icon: <BsServer title="server-render" size={35} color="white" />,
         },
         {
             id: 3,
