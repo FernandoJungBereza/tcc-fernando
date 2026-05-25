@@ -11,7 +11,7 @@ Repositório **arquivado**: código do experimento publicado para consulta no Gi
 | Site em produção | **Offline** — antes rodava em `fernandobereza.tech` |
 | API | **Offline** — antes em `api.fernandobereza.tech` |
 | Este repositório | Frontend (Next.js) |
-| Backend | Repositório separado — ver [Backend (API)](#backend-api) |
+| Backend | [api-fernando](https://github.com/FernandoJungBereza/api-fernando) (**offline** em produção) |
 
 Durante o TCC, frontend e API estavam no ar como um site real; os testes de desempenho (Lighthouse, carga, etc.) foram feitos contra esse ambiente. Hoje o domínio e a infraestrutura foram desligados; o valor do repo é o **código e a documentação do trabalho**.
 
@@ -33,12 +33,11 @@ Next.js 13 (App Router) · React 18 · TypeScript · Tailwind CSS
 
 ## Backend (API)
 
-A API que alimentava este frontend era um projeto à parte (Node/JSON Server ou similar, conforme o TCC).
+Repositório: **[api-fernando](https://github.com/FernandoJungBereza/api-fernando)** — Express na porta 4000, dados em `serverside.json`, `clientside.json` e `staticrender.json`.
 
-- Se o backend já estiver no GitHub, adicione o link aqui: `https://github.com/FernandoJungBereza/<nome-do-repo-backend>`
-- O frontend chama rotas no padrão `GET /ServerRender`, `GET /ClientRender`, `GET /StaticRender` e `GET /…/:id` (mesmo contrato em cada modo).
+O frontend chama `GET /ServerRender`, `GET /ClientRender`, `GET /StaticRender` e `GET /…/:id` (em produção era `https://api.fernandobereza.tech`, hoje desligado).
 
-Para rodar o frontend **sem** a API antiga, as páginas abrem, mas listas e artigos ficam vazios.
+Para ver o site **com conteúdo** em máquina local: suba a API e aponte os `fetch` deste repo para `http://localhost:4000` (detalhes no README da API).
 
 ## Rodar localmente (opcional)
 
@@ -49,7 +48,7 @@ npm run dev
 
 Abra [http://localhost:3000](http://localhost:3000).
 
-Para apontar para outra API, seria necessário alterar as URLs de `fetch` nos arquivos em `src/app/*/page.tsx` e `src/app/*/artigo/[id]/page.tsx` (hoje ainda referenciam `api.fernandobereza.tech`, desativado).
+As URLs de `fetch` ainda apontam para `api.fernandobereza.tech` (domínio desativado). Para testar com a API local, use `http://localhost:4000` — veja [api-fernando](https://github.com/FernandoJungBereza/api-fernando).
 
 ## Estrutura
 
