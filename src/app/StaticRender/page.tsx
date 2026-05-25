@@ -1,5 +1,4 @@
 import { ContainerPage } from "@/components/containers/containers"
-import Head from "next/head"
 import Image from "next/image"
 import { IDataRender } from "@/interfaces"
 import { ButtonRedirect } from "@/components/buttons/buttons"
@@ -37,7 +36,7 @@ export default async function StaticRender() {
                             {data?.map((item, index) => {
                                 return (
                                     <div key={item.id}>
-                                        <Link href={`StaticRender/artigo/${item.id}`}>
+                                        <Link href={`/StaticRender/artigo/${item.id}`}>
                                             <div className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4 cursor-pointer hover:scale-105 transition-all duration-200 -z-10">
                                                 <h4 className="text-xl justify-center flex">{item.titulo}</h4>
                                                 <div>

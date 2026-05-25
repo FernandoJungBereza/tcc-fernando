@@ -18,6 +18,10 @@
 # misc
 .DS_Store
 *.pem
+*.ppk
+*.key
+docs/tcc.ppk
+docs/config-server.txt
 
 # debug
 npm-debug.log*

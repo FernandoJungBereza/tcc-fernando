@@ -35,7 +35,7 @@ export default async function ServerRender() {
                             {data?.map((item, index) => {
                                 return (
                                     <div key={item.id}>
-                                        <Link href={`ServerRender/artigo/${item.id}`}>
+                                        <Link href={`/ServerRender/artigo/${item.id}`}>
                                             <div className="bg-neutral-600 border-2 border-blue-600 rounded-md p-4 cursor-pointer hover:scale-105 transition-all duration-200 -z-10">
                                                 <h4 className="text-xl justify-center flex">{item.titulo}</h4>
                                                 <div>
